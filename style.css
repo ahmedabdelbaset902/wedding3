@@ -1,0 +1,1878 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Amiri&family=Cairo:wght@300;400;600&display=swap');
+/* ===================================
+   RESET
+=================================== */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+    height:100%;
+}
+
+body{
+    font-family:'Montserrat',sans-serif;
+
+    min-height:100vh;
+
+    background:#5a010d; /* 👈 لون نبيتي ثابت */
+
+    color:#fff;
+
+    overflow-x:hidden;
+}
+/* ===================================
+   GENERAL
+=================================== */
+
+section{
+    padding:100px 10%;
+    position:relative;
+
+    background: transparent; /* 👈 ده المهم */
+}
+.section-title{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.section-title h2{
+    font-size:44px;
+    color:#b68b2c;
+    margin-bottom:12px;
+
+    font-family:'Playfair Display',serif;
+}
+
+.section-title p{
+    color:#8a7f73;
+    font-size:18px;
+}
+/* FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500&display=swap');
+
+.netflix-intro{
+    position:fixed;
+    inset:0;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+
+    overflow:hidden;
+    z-index:999999;
+
+    background:url("1.png") center/cover no-repeat;
+    background-size: cover;
+ 
+
+}
+
+/* SOFT LIGHT OVERLAY */
+.netflix-intro::after{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    background:
+    radial-gradient(circle at top,
+    rgba(255,182,193,.3),
+    transparent 60%),
+
+    radial-gradient(circle at bottom,
+    rgba(182,139,44,.2),
+    transparent 60%);
+}
+
+/* ================= HEARTS ================= */
+.hearts{
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+    overflow:hidden;
+}
+
+.hearts span{
+    position:absolute;
+    font-size:18px;
+    color:#ff6b81;
+
+    animation:floatHearts 8s linear infinite;
+}
+
+/* random positions */
+.hearts span:nth-child(1){ left:10%; animation-delay:0s; }
+.hearts span:nth-child(2){ left:30%; animation-delay:2s; }
+.hearts span:nth-child(3){ left:50%; animation-delay:4s; }
+.hearts span:nth-child(4){ left:70%; animation-delay:1s; }
+.hearts span:nth-child(5){ left:85%; animation-delay:3s; }
+
+@keyframes floatHearts{
+    0%{
+        transform:translateY(110vh) scale(.8);
+        opacity:0;
+    }
+    20%{opacity:1;}
+    100%{
+        transform:translateY(-10vh) scale(1.2);
+        opacity:0;
+    }
+}
+
+/* NAVBAR الأساسي */
+.navbar {
+    position: fixed;
+    top: -100px; /* 👈 مخفي فوق */
+    left: 0;
+    width: 100%;
+    height: 80px;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    padding: 0 30px;
+
+    background:  #5a010d;    
+    backdrop-filter: blur(12px);
+
+    transition: all 0.5s ease;
+
+    z-index: 999;
+}
+
+/* يظهر لما تنزل */
+.navbar.show {
+    top: 0; /* 👈 ينزل */
+}
+
+/* اللوجو */
+.logo-img {
+    height: 80px;
+    border-radius: 70px;
+ filter: brightness(1.5);
+}
+
+/* ===============================
+   HERO WEDDING STYLE 💖
+================================ */
+
+.hero{
+    min-height:100vh;
+    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    width: 100%; ;
+    text-align:center;
+    overflow:hidden;
+    padding-top:130px;
+
+    background:
+    
+    url("2.jpg") center/cover no-repeat;
+}
+
+/* soft romantic overlay */
+.hero::after{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    z-index:1;
+}
+
+/* 💖 floating hearts */
+.hearts{
+    position:absolute;
+    inset:0;
+    z-index:1;
+    pointer-events:none;
+}
+
+.hearts span{
+    position:absolute;
+    bottom:-40px;
+    font-size:16px;
+    color:#d40a0a;
+    opacity:.7;
+
+    animation:floatHearts linear infinite;
+}
+
+.hearts span:nth-child(1){ left:10%; animation-duration:12s; }
+.hearts span:nth-child(2){ left:25%; animation-duration:14s; }
+.hearts span:nth-child(3){ left:45%; animation-duration:10s; }
+.hearts span:nth-child(4){ left:65%; animation-duration:13s; }
+.hearts span:nth-child(5){ left:85%; animation-duration:11s; }
+
+/* content */
+.hero-content{
+    position:relative;
+    z-index:2;
+    max-width:850px;
+    padding:20px;
+
+    transform:translateY(-60px); /* 👈 رفع المحتوى لفوق */
+}
+
+/* ayah */
+.ayah {
+    font-size: 16px;
+    color: #e80606;
+    margin-bottom: 10px; /* 👈 تقليل المسافة */
+    line-height: 1.8;
+    font-family: 'Amiri', serif;
+    text-align: center;
+}
+
+/* tagline */
+.tagline{
+    letter-spacing:4px;
+    color:#5e4312;
+    font-size:12px;
+    margin-bottom:10px; /* 👈 أقرب */
+    text-transform:uppercase;
+    font-family:'Poppins', sans-serif;
+}
+
+/* names 💍 */
+.names{
+    font-size:85px;
+    font-family:'Great Vibes', cursive;
+    color:#bc081a;
+    margin:10px 0; /* 👈 قللنا الفراغ */
+    text-shadow:
+        0 5px 20px rgba(0,0,0,.15),
+        0 0 25px rgba(212,163,115,.25);
+
+    animation:fadeUp 1.5s ease;
+}
+
+.spans{
+    color:#98670c;
+    margin:0 8px;
+}
+
+/* text */
+.small-text{
+    font-size:30px;
+    font-family:'Great Vibes', cursive;
+    color:#5e4312;
+    line-height:1.6;
+    margin-bottom:10px; /* 👈 تنظيم */
+}
+
+/* date */
+.date-box{
+    display:inline-block;
+    margin-top:10px; /* 👈 أقرب */
+    font-family:'Great Vibes', cursive;
+    padding:8px 22px;
+
+    border-radius:30px;
+
+    color:#5e4312;
+    font-size:28px;
+}
+
+/* animation */
+@keyframes floatHearts{
+    from{
+        transform:translateY(0) scale(.8);
+        opacity:0;
+    }
+    20%{opacity:.8;}
+    to{
+        transform:translateY(-110vh) scale(1.2);
+        opacity:0;
+    }
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* mobile */
+@media(max-width:768px){
+
+    .names{
+        font-size:48px;
+    }
+
+    .small-text{
+        font-size:15px;
+    }
+}
+/* ===================================
+   ULTRA LUXURY COUNTDOWN 2026
+=================================== */
+.countdown-title{
+
+    font-family:'Great Vibes', cursive;
+
+    font-size:42px;
+
+    font-style:italic;
+
+    font-weight:700;
+
+    letter-spacing:6px;
+
+    color:#d8b56a;
+
+    text-align:center;
+
+    position:relative;
+
+     margin-top:10px;
+    line-height:1; /* مهم جدًا */
+
+  
+}
+.countdown-title{
+    transform:translateY(30px);
+}
+
+/* luxury line */
+.countdown-title::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+    bottom:-6px;
+
+    transform:translateX(-50%);
+
+    width:120px;
+    height:2px;
+
+    background:
+    linear-gradient(
+    90deg,
+    transparent,
+    #d8b56a,
+    transparent);
+
+    border-radius:50px;
+}
+
+
+.countdown{
+    position:relative;
+    overflow:hidden;
+
+     padding:25px 8% 40px; /* قلل من فوق بس */
+
+    background:
+    linear-gradient(
+        to bottom,
+        #5a010d,
+        #2b0005
+    );
+
+    text-align:center;
+}
+/* cinematic floating glow */
+.countdown::before{
+    content:"";
+
+    position:absolute;
+    inset:-10%;
+
+    background:
+    radial-gradient(circle,
+    rgba(182,139,44,.12),
+    transparent 55%);
+
+    filter:blur(90px);
+
+    animation:countGlow 18s ease-in-out infinite;
+}
+
+/* romantic particles */
+.countdown::after{
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    background:
+    radial-gradient(circle,
+    rgba(255,255,255,.7) 1px,
+    transparent 1px);
+
+    background-size:140px 140px;
+
+    opacity:.25;
+
+    animation:starsMove 120s linear infinite;
+}
+
+/* ===================================
+   TIMER WRAP
+=================================== */
+
+.timer{
+    position:relative;
+    z-index:3;
+     margin-top:-25px;
+    display:flex;
+    justify-content:center;
+    align-items:flex-end;
+    flex-wrap:wrap;
+
+    gap:55px;
+}
+
+/* ===================================
+   SINGLE ITEM
+=================================== */
+
+.time-box{
+    position:relative;
+
+    min-width:140px;
+
+    padding:10px 5px;
+
+    animation:fadeFloat 1.5s ease;
+}
+
+/* golden line */
+.time-box::after{
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+    bottom:-10px;
+
+    transform:translateX(-50%);
+
+    width:70px;
+    height:1px;
+
+    background:
+    linear-gradient(to right,
+    transparent,
+    rgba(182,139,44,.6),
+    transparent);
+}
+
+/* number */
+.time-box h3{
+
+    font-size:95px;
+
+    font-family:'Playfair Display',serif;
+
+    font-weight:700;
+
+    line-height:1;
+
+    color:#b68b2c;
+
+    text-shadow:
+    0 0 25px rgba(182,139,44,.18),
+    0 0 60px rgba(182,139,44,.08);
+
+    animation:numberGlow 4s ease-in-out infinite;
+}
+
+/* text */
+.time-box span{
+
+    display:block;
+
+    margin-top:12px;
+
+    font-size:15px;
+
+    letter-spacing:5px;
+
+    text-transform:uppercase;
+
+    color:#8a7f73;
+}
+
+/* ===================================
+   DIVIDER DOT
+=================================== */
+
+.time-box:not(:last-child)::before{
+
+    content:"✦";
+
+    position:absolute;
+
+    right:-35px;
+    top:38%;
+
+    transform:translateY(-50%);
+
+    color:rgba(182,139,44,.45);
+
+    font-size:22px;
+}
+
+/* ===================================
+   ANIMATIONS
+=================================== */
+
+@keyframes numberGlow{
+
+    0%,100%{
+        transform:translateY(0);
+        text-shadow:
+        0 0 20px rgba(182,139,44,.15);
+    }
+
+    50%{
+        transform:translateY(-4px);
+
+        text-shadow:
+        0 0 35px rgba(182,139,44,.35),
+        0 0 80px rgba(182,139,44,.15);
+    }
+}
+
+@keyframes fadeFloat{
+
+    from{
+        opacity:0;
+        transform:
+        translateY(40px)
+        scale(.95);
+
+        filter:blur(10px);
+    }
+
+    to{
+        opacity:1;
+        transform:
+        translateY(0)
+        scale(1);
+
+        filter:blur(0);
+    }
+}
+
+@keyframes countGlow{
+
+    0%,100%{
+        transform:
+        translate(-40px,-20px)
+        scale(1);
+    }
+
+    50%{
+        transform:
+        translate(40px,20px)
+        scale(1.08);
+    }
+}
+
+@keyframes starsMove{
+
+    from{
+        transform:translateY(0);
+    }
+
+    to{
+        transform:translateY(-200px);
+    }
+}
+/* ===================================
+   MOBILE FIX
+=================================== */
+
+@media(max-width:768px){
+
+    .timer{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        flex-wrap:nowrap; /* يمنع النزول تحت */
+
+        gap:14px;
+    }
+
+    .time-box{
+        min-width:auto;
+        width:22%;
+        padding:0;
+    }
+
+    .time-box h3{
+        font-size:38px; /* تصغير الرقم */
+    }
+
+    .time-box span{
+        font-size:10px;
+        letter-spacing:2px;
+        margin-top:8px;
+    }
+
+    /* النجمة بين الأرقام */
+    .time-box:not(:last-child)::before{
+
+        right:-10px;
+
+        font-size:12px;
+
+        top:35%;
+    }
+
+}
+/* ===============================
+   EVENT CARD (ULTRA LUXURY GLASS)
+================================ */
+.event-section{
+
+    padding:120px 20px;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+
+    background:
+    linear-gradient(
+        to bottom,
+        #5a010d,
+        #2b0005
+    );
+}
+
+/* =========================
+   LUXURY SECTION TITLE
+========================= */
+
+.section-title{
+
+    position: relative;
+
+    text-align: center;
+
+    margin-bottom: 70px;
+}
+
+
+/* MAIN TITLE */
+.section-title h2{
+
+    position: relative;
+
+    display: inline-block;
+
+    font-size: 56px;
+
+    font-family:'Playfair Display', serif;
+
+    font-style: italic;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    color: #d8b56a;
+
+    padding-bottom: 18px;
+
+    text-shadow:
+    0 0 12px rgba(216,181,106,.18),
+    0 0 35px rgba(0,0,0,.12);
+
+    animation: luxuryFade 1.3s ease;
+}
+
+
+/* GOLD LINE */
+.section-title h2::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+    bottom:0;
+
+    transform:translateX(-50%);
+
+    width:140px;
+    height:2px;
+
+    border-radius:50px;
+
+    background:
+    linear-gradient(
+    90deg,
+    transparent,
+    #d8b56a,
+    transparent);
+
+    box-shadow:
+    0 0 12px rgba(216,181,106,.35);
+}
+
+
+/* SMALL GLOW DOT */
+.section-title h2::before{
+
+    content:"✦";
+
+    position:absolute;
+
+    top:-18px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    font-size:18px;
+
+    color:#d8b56a;
+
+    opacity:.85;
+
+    text-shadow:
+    0 0 12px rgba(216,181,106,.4);
+}
+
+
+/* ANIMATION */
+@keyframes luxuryFade{
+
+    from{
+        opacity:0;
+        transform:translateY(25px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+
+/* MOBILE */
+@media(max-width:768px){
+
+    .section-title h2{
+
+        font-size:34px;
+
+        letter-spacing:2px;
+    }
+
+    .section-title h2::after{
+
+        width:90px;
+    }
+}
+
+
+
+/* =========================
+   CARD
+========================= */
+.card{
+
+    width:750px;
+    max-width:100%;
+
+    position:relative;
+    overflow:hidden;
+
+    padding:80px 55px;
+
+    /* 👇 دمج الصورة + لون فوقها */
+    background:
+       
+        url("3.jpeg") center/cover no-repeat;
+
+    backdrop-filter:blur(25px);
+    -webkit-backdrop-filter:blur(25px);
+
+    border:1px solid rgba(207,207,201,.9);
+
+    box-shadow:
+        0 25px 80px rgba(0,0,0,.08);
+
+    color:#1f2438;
+    text-align:center;
+}
+
+
+
+
+
+/* =========================
+   TITLE
+========================= */
+.card h1{
+    font-family:'Great Vibes', cursive;
+    font-size:72px;
+    font-weight:300;
+    line-height:1.2;
+    letter-spacing:1px;
+    margin-bottom:25px;
+    color:#000000;
+}
+
+
+/* =========================
+   DATE
+========================= */
+.date{
+    font-family:'Noto Naskh', serif;
+    font-size:34px;
+    letter-spacing:2px;
+    margin-bottom:8px;
+    color:#000000;
+}
+
+
+/* =========================
+   TIME
+========================= */
+.time{
+    font-family:'Noto Naskh', serif;
+    font-size:28px;
+    font-weight:300;
+    margin-bottom:18px;
+    color:#000000;
+}
+
+
+/* =========================
+   LOCATION
+========================= */
+.location{
+    font-family:'Cormorant Garamond', serif;
+    font-size:30px;
+    line-height:1.5;
+    margin-bottom:8px;
+    font-weight:300;
+    color:#000000;
+}
+
+
+/* =========================
+   ARABIC
+========================= */
+.arabic{
+    font-family:'Noto Naskh Arabic', serif;
+    font-size:34px;
+    direction:rtl;
+    line-height:1.7;
+    margin-bottom:25px;
+    color:#010101;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+.btn{
+    display:inline-block;
+    text-decoration:none;
+    color:#000000;
+    border-bottom:1px solid #000000;
+    padding-bottom:4px;
+    font-size:22px;
+    letter-spacing:2px;
+    transition:.3s ease;
+    font-family:'Great Vibes', cursive;
+}
+
+.btn:hover{
+    color:#000000;
+    border-color:#000000;
+    transform:translateY(-2px);
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media(max-width:768px){
+
+    .event-section{
+        padding:70px 15px;
+    }
+
+    .section-title h2{
+        font-size:34px;
+    }
+
+    .section-title p{
+        font-size:16px;
+    }
+
+    .card{
+        padding:45px 20px;
+    }
+
+    .content{
+        padding:30px 15px;
+    }
+
+    .card h1{
+        font-size:42px;
+        margin-bottom:25px;
+    }
+
+    .date{
+        font-size:22px;
+    }
+
+    .time{
+        font-size:20px;
+    }
+
+    .location{
+        font-size:21px;
+    }
+
+    .arabic{
+        font-size:24px;
+    }
+
+    .btn{
+        font-size:17px;
+        letter-spacing:1.5px;
+    }
+}
+
+/* =========================
+   LUXURY MAP (ULTRA PRO)
+========================= */
+
+.map-box{
+
+    width:100%;
+    max-width:1100px;
+    margin:80px auto;
+
+    position:relative;
+    overflow:hidden;
+
+    border-radius:30px;
+
+    /* 👑 عمق أعلى */
+    box-shadow:
+    0 40px 100px rgba(0,0,0,.30),
+    0 15px 40px rgba(232, 210, 165, 0.25);
+
+    border:1px solid rgba(232, 187, 89, 0.6);
+
+    backdrop-filter:blur(6px);
+
+    transition:0.5s;
+}
+
+/* ✨ Hover أقوى */
+.map-box:hover{
+    transform:translateY(-14px) scale(1.02);
+
+    box-shadow:
+    0 50px 120px rgba(0,0,0,.4),
+    0 20px 50px rgba(210, 144, 3, 0.4);
+}
+
+/* =========================
+   MAP
+========================= */
+#map {
+    width: 100%;
+    height: 400px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+.map-box iframe{
+
+    width:100%;
+    height:520px;
+    border:0;
+
+    /* 🎬 ألوان أشيك */
+    filter:
+    grayscale(.12)
+    contrast(1.08)
+    brightness(1.04)
+    saturate(.95);
+
+    transition:0.7s;
+}
+
+/* عند hover */
+.map-box:hover iframe{
+
+    filter:
+    grayscale(0)
+    contrast(1.15)
+    brightness(1.05)
+    saturate(1.1);
+
+    transform:scale(1.04);
+}
+
+/* =========================
+   OVERLAY فاخر
+========================= */
+
+.map-box::after{
+
+    content:"";
+    position:absolute;
+    inset:0;
+
+    pointer-events:none;
+
+    background:
+
+    /* ✨ دهبي ناعم */
+    radial-gradient(circle at top,
+    rgba(255, 200, 80, 0.25),
+    transparent 60%),
+
+    /* 🍷 نبيتي خفيف */
+    linear-gradient(to top,
+    rgba(118,5,5,0.25),
+    transparent 70%);
+}
+
+/* =========================
+   SHINE EFFECT 🔥 (أنعم)
+========================= */
+
+.map-box::before{
+
+    content:"";
+    position:absolute;
+    top:0;
+    left:-120%;
+    width:60%;
+    height:100%;
+
+    background:
+    linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,.3),
+        transparent
+    );
+
+    transform:skewX(-20deg);
+
+    transition:0.9s;
+}
+
+/* الحركة */
+.map-box:hover::before{
+    left:130%;
+}
+
+/* =========================
+   BORDER GLOW ✨
+========================= */
+
+.map-box:hover{
+    border:1px solid rgba(255, 200, 100, 0.9);
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:768px){
+
+    .map-box{
+        border-radius:20px;
+        margin:50px auto;
+    }
+
+    .map-box iframe{
+        height:350px;
+    }
+}
+/* ===================================
+   ULTRA LUXURY FAQ (UPDATED)
+=================================== */
+
+.faq-container{
+    max-width:950px;
+    margin:auto;
+
+}
+
+/* single faq */
+.faq{
+    margin-bottom:20px;
+    padding:15px 0;
+
+    border-bottom:1px solid #d29208de;
+background-color: #e7d7c6;
+    transition:border .3s ease;
+}
+
+/* hover effect بسيط */
+.faq:hover{
+    border-bottom:1px solid #b68b2c;
+}
+
+/* ===================================
+   QUESTION
+=================================== */
+
+.faq-question{
+    padding:18px 0;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+
+    cursor:pointer;
+}
+
+/* ENGLISH */
+.faq-question h3{
+    color:  #5a010d;
+
+    font-size:26px;
+
+    font-family:'Cormorant Garamond', serif;
+
+    font-style:italic;
+    font-weight:400;
+
+    letter-spacing:.3px;
+    line-height:1.6;
+
+    margin:0;
+}
+
+/* ARABIC */
+.faq-question .ar{
+    display:block;
+    margin-top:6px;
+
+    font-size:18px;
+    color:  #5a010d;
+
+    font-family:'Cairo', sans-serif;
+}
+
+/* icon */
+.faq-question .icon{
+    font-size:20px;
+    color:#000000;
+
+    background:none;
+    border:none;
+
+    width:auto;
+    height:auto;
+
+    transition:.3s;
+}
+
+/* rotate */
+.faq.active .faq-question .icon{
+    transform:rotate(45deg);
+}
+
+/* ===================================
+   ANSWER
+=================================== */
+
+.faq-answer{
+    max-height:0;
+    overflow:hidden;
+
+    transition:.4s ease;
+}
+
+/* ENGLISH ANSWER */
+.faq-answer p{
+    padding-top:12px;
+
+    color:#000000;
+
+    font-size:20px;
+
+    line-height:1.9;
+
+    font-family:'Cormorant Garamond', serif;
+
+    margin:0;
+}
+
+/* ARABIC ANSWER */
+.faq-answer .ar{
+    display:block;
+
+    margin-top:8px;
+
+    font-size:17px;
+
+    color:#000000;
+
+    font-family:'Cairo', sans-serif;
+}
+
+/* active */
+.faq.active .faq-answer{
+    max-height:300px;
+}
+
+/* ===================================
+   LINE BETWEEN ITEMS (مهم جدًا زي الصورة)
+=================================== */
+
+.faq{
+    border-bottom:1px solid #e6e6e6;
+    padding-bottom:20px;
+    margin-bottom:25px;
+}
+
+/* ===================================
+   MOBILE
+=================================== */
+
+@media(max-width:768px){
+
+    .faq-question h3{
+        font-size:20px;
+    }
+
+    .faq-question .ar{
+        font-size:15px;
+    }
+
+    .faq-answer p{
+        font-size:17px;
+    }
+
+    .faq-answer .ar{
+        font-size:15px;
+    }
+}
+
+/* ===================================
+   MOBILE
+=================================== */
+
+@media(max-width:768px){
+
+    .faq{
+        border-radius:26px;
+    }
+
+    .faq-question{
+        padding:24px 22px;
+    }
+
+    .faq-question h3{
+        font-size:18px;
+    }
+
+    .faq-question .ar{
+        font-size:15px;
+    }
+
+    .faq-question .icon{
+        width:40px;
+        height:40px;
+        font-size:22px;
+    }
+
+    .faq-answer p{
+        padding:0 22px 10px;
+        font-size:17px;
+    }
+
+    .faq-answer .ar{
+        padding:0 22px 28px;
+        font-size:15px;
+    }
+}
+/* ===================================
+   THANK YOU - GLASSMORPHISM LUXURY
+=================================== */
+
+.thanks{
+    position:relative;
+
+    max-width:950px;
+    margin:auto;
+
+    padding:90px 60px;
+
+    text-align:center;
+
+    border-radius:40px;
+
+    overflow:hidden;
+
+    /* glass effect */
+    background:
+    linear-gradient(
+        135deg,
+        rgba(255,255,255,.18),
+        rgba(255,255,255,.06)
+    );
+
+    backdrop-filter:blur(22px);
+    -webkit-backdrop-filter:blur(22px);
+
+    border:1px solid rgba(255,255,255,.14);
+
+    box-shadow:
+    0 25px 80px rgba(0,0,0,.12),
+    inset 0 1px 1px rgba(255,255,255,.15);
+
+    isolation:isolate;
+}
+
+/* cinematic glow */
+.thanks::before{
+    content:"";
+
+    position:absolute;
+
+    width:500px;
+    height:500px;
+
+    top:-220px;
+    left:-180px;
+
+    background:
+    radial-gradient(circle,
+    rgba(182,139,44,.18),
+    transparent 70%);
+
+    filter:blur(60px);
+
+    animation:thankGlow 12s ease-in-out infinite;
+
+    z-index:-1;
+}
+
+/* luxury shine layer */
+.thanks::after{
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    background:
+    linear-gradient(
+        120deg,
+        transparent 20%,
+        rgba(255,255,255,.08) 50%,
+        transparent 80%
+    );
+
+    transform:translateX(-120%);
+
+    animation:glassShine 8s linear infinite;
+}
+
+/* title */
+.thanks h2{
+
+   font-family:'Great Vibes', cursive;
+    font-size:58px;
+
+    font-weight:700;
+
+    color:#dcd6ca;
+
+    margin-bottom:28px;
+
+    letter-spacing:3px;
+
+    text-shadow:
+    0 0 25px rgba(182,139,44,.18);
+
+    position:relative;
+}
+
+/* golden underline */
+.thanks h2::after{
+
+    content:"";
+  
+    position:absolute;
+
+    left:50%;
+    bottom:-14px;
+
+    transform:translateX(-50%);
+
+    width:120px;
+    height:1px;
+
+    background:
+    linear-gradient(to right,
+    transparent,
+    rgba(182,139,44,.7),
+    transparent);
+}
+
+/* paragraph */
+.thanks p{
+
+    max-width:720px;
+
+    margin:auto;
+
+    color:rgba(228, 195, 129, 0.88);
+
+    font-size:24px;
+
+    line-height:2.2;
+
+     font-family:'Cormorant Garamond', serif;
+
+    letter-spacing:.5px;
+
+    text-shadow:
+    0 2px 12px rgba(0,0,0,.25);
+}
+ .thanks-ar
+{
+    color:rgba(230, 194, 120, 0.88);
+  
+}
+/* ===================================
+   ANIMATIONS
+=================================== */
+
+@keyframes thankGlow{
+
+    0%,100%{
+        transform:
+        translate(0,0)
+        scale(1);
+    }
+
+    50%{
+        transform:
+        translate(40px,20px)
+        scale(1.08);
+    }
+}
+
+@keyframes glassShine{
+
+    from{
+        transform:translateX(-120%);
+    }
+
+    to{
+        transform:translateX(120%);
+    }
+}
+
+/* ===================================
+   MOBILE
+=================================== */
+
+@media(max-width:768px){
+
+    .thanks{
+        padding:65px 28px;
+        border-radius:30px;
+    }
+
+    .thanks h2{
+        font-size:38px;
+    }
+
+    .thanks p{
+        font-size:18px;
+        line-height:2;
+    }
+}
+
+/* ===================================
+   ULTRA LUXURY FOOTER
+=================================== */
+
+footer{
+
+    position:relative;
+
+    overflow:hidden;
+
+    padding:45px 20px;
+
+    text-align:center;
+
+    background:
+    linear-gradient(
+        to bottom,
+        rgba(255,255,255,.08),
+        rgba(255,255,255,.03)
+    );
+
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+
+    border-top:
+    1px solid rgba(255,255,255,.12);
+
+    box-shadow:
+    0 -10px 40px rgba(0,0,0,.06);
+
+    color:#d7c6a0;
+
+    font-family:'Great Vibes', cursive;
+
+    letter-spacing:1px;
+}
+
+/* cinematic golden glow */
+footer::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:450px;
+    height:450px;
+
+    top:-260px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    background:
+    radial-gradient(circle,
+    rgba(182,139,44,.16),
+    transparent 70%);
+
+    filter:blur(70px);
+
+    animation:footerGlow 10s ease-in-out infinite;
+}
+
+/* luxury shine line */
+footer::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:220px;
+    height:1px;
+
+    background:
+    linear-gradient(to right,
+    transparent,
+    rgba(182,139,44,.8),
+    transparent);
+}
+
+/* footer text */
+footer p{
+
+    position:relative;
+    z-index:2;
+font-family:'Great Vibes', cursive;
+    font-size:22px;
+
+    line-height:2;
+
+    color:#dba124;
+
+    text-shadow:
+    0 0 18px rgba(182,139,44,.08);
+}
+
+/* optional small text */
+footer span{
+
+    display:block;
+
+    margin-top:10px;
+
+    font-size:14px;
+
+    letter-spacing:4px;
+
+    text-transform:uppercase;
+
+    color:rgba(255,255,255,.55);
+}
+
+/* glow animation */
+@keyframes footerGlow{
+
+    0%,100%{
+        transform:
+        translateX(-50%)
+        scale(1);
+    }
+
+    50%{
+        transform:
+        translateX(-50%)
+        scale(1.08);
+    }
+}
+
+/* mobile */
+@media(max-width:768px){
+
+    footer{
+        padding:35px 18px;
+    }
+
+    footer p{
+        font-size:18px;
+    }
+
+    footer span{
+        font-size:11px;
+        letter-spacing:2px;
+    }
+}
+/* ===================================
+   ANIMATION
+=================================== */
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+/* ===================================
+   RESPONSIVE
+=================================== */
+
+@media(max-width:768px){
+
+    section{
+        padding:80px 6%;
+    }
+
+    .hero-content,
+    .main-card,
+    .thanks,
+    .info-card-vip{
+        padding:40px 25px;
+    }
+
+    .names{
+        font-size:48px;
+    }
+
+    .ayah{
+        font-size:20px;
+    }
+
+    .section-title h2{
+        font-size:35px;
+    }
+
+    .time-box{
+        width:140px;
+    }
+
+    .thanks p,
+    .royal-text{
+        font-size:18px;
+    }
+
+}
+
+.music-btn{
+    position:fixed;
+    bottom:25px;
+    left:25px;
+
+    width:50px;
+    height:50px;
+
+    border-radius:50%;
+    border:1px solid rgba(255,255,255,.2);
+
+    background:rgba(0,0,0,.35);
+    backdrop-filter:blur(10px);
+
+    color:#f7e7a9;
+    font-size:20px;
+
+    cursor:pointer;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.3);
+
+    transition:.3s ease;
+    z-index:9999;
+}
+
+.music-btn:hover{
+    transform:scale(1.1);
+    background:rgba(0,0,0,.5);
+}
+
+.music-btn.active{
+    color:#fff;
+    box-shadow:0 0 25px rgba(182,139,44,.4);
+}
+
+
+
+/* ===============================
+   SCHEDULE - CLEAN LUXURY
+================================ */
+
+.schedule{
+    padding:140px 20px;
+    background:#5a010d;
+    text-align:center;
+}
+
+/* العنوان */
+.schedule-title{
+    font-family:'Great Vibes', cursive;
+    font-size:42px;
+    letter-spacing:6px;
+    color:#d8b56a;
+    margin-bottom:80px;
+}
+
+/* الخط */
+.timeline{
+    position:relative;
+    max-width:800px;
+    margin:auto;
+    padding-left:40px;
+}
+
+.timeline::before{
+    content:"";
+    position:absolute;
+    left:10px;
+    top:0;
+    width:2px;
+    height:100%;
+    background:linear-gradient(to bottom,#d8b56a,transparent);
+}
+
+/* كل عنصر */
+.timeline-item{
+    position:relative;
+    margin-bottom:70px;
+
+    opacity:0;
+    transform:translateY(50px);
+    transition:all .8s ease;
+}
+
+/* لما يظهر */
+.timeline-item.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* الدائرة */
+.circle{
+    position:absolute;
+    left:-2px;
+    top:5px;
+
+    width:16px;
+    height:16px;
+
+    border:2px solid #d8b56a;
+    border-radius:50%;
+    background:#5a010d;
+
+    transform:scale(0);
+    transition:.4s ease;
+}
+
+.timeline-item.show .circle{
+    transform:scale(1);
+}
+
+.timeline .content{
+    text-align:left;
+    padding-left:10px;
+}
+
+/* العنوان */
+.content h3{
+    font-size:24px;
+    color:#fff;
+    margin-bottom:6px;
+    cursor:pointer;
+}
+
+/* الوقت */
+.content span{
+    font-size:12px;
+    letter-spacing:3px;
+    color:#d8b56a;
+    display:block;
+    margin-bottom:10px;
+}
+
+/* الإنجليزي */
+.details{
+    font-size:15px;
+    color:#ddd;
+    line-height:1.7;
+}
+
+/* العربي */
+.details-ar{
+    font-size:14px;
+    color:#aaa;
+    line-height:1.7;
+    margin-top:5px;
+    direction:rtl;
+}
+
+/* hover خفيف */
+.timeline-item:hover h3{
+    color:#d8b56a;
+}
